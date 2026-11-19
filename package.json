@@ -1,0 +1,19 @@
+{
+  "name": "expert-lavage-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Expert Mobile — static website for expert-lavage-mobile.ca (GitHub Pages)",
+  "scripts": {
+    "css:watch": "tailwindcss -i ./src/styles.css -o ./public/assets/style.css --watch",
+    "serve": "serve public -l 8081",
+    "dev": "npm run css:build && concurrently -k -n css,web -c cyan,green \"npm run css:watch\" \"npm run serve\"",
+    "css:build": "tailwindcss -i ./src/styles.css -o ./public/assets/style.css",
+    "build": "tailwindcss -i ./src/styles.css -o ./public/assets/style.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "concurrently": "^9.0.0",
+    "serve": "^14.2.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

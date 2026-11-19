@@ -1,0 +1,6 @@
+/* Reusable component classes (keep this small; prefer utilities in the HTML). */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand px-5 py-3 font-semibold text-white transition-colors hover:bg-brand-dark;
+  }
+}

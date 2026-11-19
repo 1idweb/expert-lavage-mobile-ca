@@ -1,0 +1,10 @@
+/* Base element styles (Tailwind's Preflight already provides the reset). */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+}

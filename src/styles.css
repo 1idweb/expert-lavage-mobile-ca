@@ -1,0 +1,9 @@
+/* Entry point: Tailwind v4 + project partials (order matters). */
+@import "tailwindcss";
+
+/* Scan the published HTML for utility classes. */
+@source "../public/**/*.html";
+
+@import "./styles/theme.css";
+@import "./styles/base.css";
+@import "./styles/components.css";

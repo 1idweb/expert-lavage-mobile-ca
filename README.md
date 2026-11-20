@@ -10,11 +10,14 @@ npm install
 
 # 2. Build the CSS, then start Tailwind in watch mode + the local server
 npm run dev
-# → http://localhost:8081      (FR)
-# → http://localhost:8081/en/  (EN)
 ```
 
-Port 8081 is used on purpose to avoid clashing with other local projects on 8080.
+### In your browser
+
+* FR: http://localhost:8081
+* EN: http://localhost:8081/en
+
+> Port 8081 is used on purpose to avoid clashing with other local projects on 8080.
 
 ## Scripts
 

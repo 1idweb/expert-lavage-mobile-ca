@@ -1,9 +1,10 @@
 /* Design tokens. Each --color-* becomes utilities (bg-brand, text-ink, ...). */
 /* Placeholder palette: to be replaced once the brand identity is defined. */
 @theme {
-  --color-ink: #0b1220;
-  --color-paper: #f7f8fa;
-  --color-brand: #1e6bff;
+  --color-ink: #eee;
+  --color-cta: #2dc8dc;
+  --color-paper: #000;
+  --color-brand: #2dc8dc;
   --color-brand-dark: #1450c7;
   --color-silver: #c9ced6;
 

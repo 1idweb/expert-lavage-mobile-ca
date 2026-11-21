@@ -1,6 +1,37 @@
 /* Reusable component classes (keep this small; prefer utilities in the HTML). */
 @layer components {
-  .btn {
-    @apply inline-flex items-center justify-center rounded-lg bg-brand px-5 py-3 font-semibold text-white transition-colors hover:bg-brand-dark;
+
+  /**
+  * Contains a group of buttons
+  */
+  .btn-group {
+    @apply flex flex-row items-center gap-px;
   }
+
+  /**
+   * Buttons
+   */
+  .btn, button {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand px-4 py-1 font-semibold text-black transition-colors hover:bg-brand-light;
+
+    /* Not clickable */
+    span&,
+    &.btn--active {
+      @apply bg-gray-400 hover:bg-gray-400;
+    }
+
+    &.btn-toggle {
+      @apply rounded-none px-3;
+
+      /* Round the right corners only */
+      &.btn-toggle--right {
+        @apply rounded-r-lg pr-4;
+      }
+      /* Round the left corners only */
+      &.btn-toggle--left {
+        @apply rounded-l-lg pl-4;
+      }
+    }
+  }
+
 }

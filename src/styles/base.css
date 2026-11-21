@@ -7,4 +7,52 @@
   body {
     @apply bg-paper font-sans text-ink antialiased;
   }
+
+  a:not(.btn) {
+    @apply hover:underline focus-visible:underline;
+  }
+
+  /**
+   * Page layout
+   */
+  main.site {
+    @apply max-w-(--breakpoint-md) mx-auto my-2 md:my-6;
+  }
+
+  header.main {
+    @apply flex flex-col sm:flex-row items-center px-2 pb-8;
+
+    .logo {
+      @apply flex grow flex-col sm:flex-row gap-2 mb-4 sm:mb-0 items-center sm:gap-8;
+
+      img {
+        width: 150px;
+      }
+      .tagline {
+        @apply inline-block text-2xl font-bold;
+
+        &::before,
+        &::after {
+          display: none;
+          content: '';
+          width: 30px;
+          height: 1rem;
+          margin-inline: 5px;
+          background: transparent url(img/brush-stroke.svg) no-repeat center center;
+          background-size: 100% auto;
+        }
+        &::before {
+          transform: scaleX(-1);
+        }
+
+        @variant max-sm {
+          &::before,
+          &::after {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
 }

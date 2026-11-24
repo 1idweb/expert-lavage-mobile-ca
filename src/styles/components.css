@@ -30,7 +30,24 @@
     /* Not clickable */
     span&,
     &.btn--active {
-      @apply bg-gray-400 hover:bg-gray-400;
+      @apply bg-white/20 text-brand-light hover:bg-white/20;
+    }
+
+    /* Secondary button: icon + text (icon SVG inlined as a data URI, filled with the brand color) */
+    &.btn-icon-text {
+      @apply w-full justify-start gap-3 py-2 text-brand-light bg-white/20 hover:bg-white/30;
+
+      &::before {
+        content: '';
+        @apply size-6 shrink-0 bg-contain bg-center bg-no-repeat;
+      }
+
+      &.icon-mobile-hand::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232dc8dc' d='M6,20V4V6v7v7Zm9.93,3q-0.65,0-1.22-0.26T13.7,22L8.65,15.95L9.78,14.8q0.45-0.45 1.1-0.56q0.65-0.11 1.23,0.19L15,15.88V7h2q1.65,0 2.83,1.17T21,11v8q0,1.65-1.17,2.82T17,23H15.93ZM6,22q-0.82,0-1.41-0.59T4,20V4Q4,3.17 4.59,2.59T6,2h9q0.83,0 1.41,0.59T17,4V7H15V4H6V20h6.03l1.68,2H6ZM11.21,6.71Q11.5,6.43 11.5,6T11.21,5.29T10.5,5Q10.08,5 9.79,5.29T9.5,6T9.79,6.71T10.5,7t0.71-0.29ZM15.93,21H17q0.82,0 1.41-0.57T19,19V11q0-0.83-0.59-1.41T17,9V19.13l-5.3-2.68l3.45,4.2q0.15,0.18 0.35,0.26T15.93,21Z'/%3E%3C/svg%3E");
+      }
+      &.icon-brand-facebook::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232dc8dc' d='M22.5 12.038c0-5.799-4.701-10.5-10.5-10.5S1.5 6.24 1.5 12.038c0 4.925 3.39 9.057 7.963 10.191v-6.982H7.298v-3.209h2.165v-1.382c0-3.574 1.618-5.23 5.126-5.23.666 0 1.813.13 2.283.26v2.909a14 14 0 0 0-1.213-.04c-1.722 0-2.387.653-2.387 2.349v1.134h3.43l-.59 3.21h-2.84v7.214c5.2-.628 9.228-5.055 9.228-10.424'/%3E%3C/svg%3E");
+      }
     }
 
     &.btn-toggle {
@@ -100,10 +117,18 @@
     }
   }
 
+  .list-btn-item {
+    @apply flex gap-4 md:block flex-auto md:flex-none;
+
+    li {
+      @apply md:mb-4;
+    }
+  }
+
   /**
    * Feature list with a check icon (SVG inlined as a data URI)
    */
-  .check-list {
+  .list-check-item {
     /* One column on mobile, two columns from sm up */
     @apply columns-1 gap-x-6 sm:columns-2;
 
@@ -116,6 +141,67 @@
         /* Material "check" symbol: viewBox added and fill set to white (currentcolor does not work in background-image) */
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232dc8dc' d='m9.55 18-5.7-5.7 1.43-1.42 4.28 4.28 9.18-9.18 1.41 1.42z'/%3E%3C/svg%3E");
       }
+    }
+  }
+
+  /**
+   * Add-ons list: icon tile + label + dotted leader + price
+   */
+  .list-icon-item {
+    @apply flex flex-col gap-4;
+
+    .icon-item {
+      @apply flex items-center gap-3 text-lg;
+
+      /* Icon tile: dark rounded square holding a white icon (SVG inlined as a data URI) */
+      &::before {
+        content: '';
+        @apply size-10 shrink-0 rounded-lg bg-white/10 bg-center bg-no-repeat;
+        background-size: 1.5rem;
+      }
+
+      &.icon-snow::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232dc8dc' d='M11,22V20.18L9.4,21.53L8.1,20L11,17.55v-3.8l-3.3,1.9L7.03,19.38L5.05,19.02l0.38-2.07l-1.6,0.93l-1-1.73l1.6-0.92L2.45,14.5l0.67-1.88L6.7,13.9L10,12L6.7,10.1L3.13,11.4L2.45,9.5L4.43,8.8L2.83,7.88l1-1.73l1.6,0.93L5.05,5L7.03,4.65L7.7,8.38l3.3,1.9V6.47L8.1,4.02L9.4,2.5L11,3.85V2h2V3.85L14.6,2.5l1.3,1.52L13,6.47v3.8l3.28-1.9l0.67-3.73L18.93,5L18.55,7.07l1.6-0.93l1,1.73L19.55,8.8l1.98,0.7l-0.68,1.9l-3.57-1.3L14,12l3.28,1.9l3.57-1.27l0.68,1.88l-1.98,0.72l1.6,0.92l-1,1.73l-1.6-0.93l0.38,2.07l-1.98,0.35l-0.67-3.72L13,13.75v3.8L15.9,20l-1.3,1.52L13,20.18V22H11Z'/%3E%3C/svg%3E");
+      }
+      &.icon-pets::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232dc8dc' d='M4.5,12.13q-1.05,0-1.78-0.73Q2,10.68 2,9.63Q2,8.57 2.73,7.85Q3.45,7.13 4.5,7.13T6.28,7.85T7,9.63T6.28,11.4Q5.55,12.13 4.5,12.13ZM7.23,7.4Q6.5,6.68 6.5,5.63T7.23,3.85Q7.95,3.13 9,3.13t1.78,0.72T11.5,5.63T10.78,7.4Q10.05,8.13 9,8.13T7.23,7.4Zm6,0Q12.5,6.68 12.5,5.63t0.73-1.78Q13.95,3.13 15,3.13t1.78,0.72T17.5,5.63T16.78,7.4Q16.05,8.13 15,8.13T13.23,7.4Zm6.27,4.73q-1.05,0-1.77-0.73Q17,10.68 17,9.63q0-1.05 0.73-1.78q0.72-0.72 1.77-0.72t1.78,0.72T22,9.63T21.28,11.4q-0.73,0.73-1.78,0.73Zm-12.85,10q-1.13,0-1.89-0.86T4,19.23q0-1.3 0.89-2.28q0.89-0.97 1.76-1.92q0.72-0.78 1.25-1.69q0.53-0.91 1.25-1.71q0.55-0.65 1.28-1.08q0.72-0.42 1.57-0.42t1.58,0.4q0.72,0.4 1.28,1.05q0.7,0.8 1.24,1.72q0.54,0.93 1.26,1.73q0.88,0.95 1.76,1.92Q20,17.93 20,19.23q0,1.17-0.76,2.04t-1.89,0.86q-1.35,0-2.68-0.23Q13.35,21.68 12,21.68T9.33,21.9Q8,22.13 6.65,22.13Z'/%3E%3C/svg%3E");
+      }
+      &.icon-car-lights::before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232dc8dc' d='M4.714 3.404a.92.92 0 0 0-.782.535.926.926 0 0 0 .447 1.233l4.202 1.96a.927.927 0 1 0 .784-1.681L5.163 3.49a.9.9 0 0 0-.449-.087m9.802 1.567c-.607 0-1.171.287-1.587.695-.416.409-.725.935-.976 1.56-.503 1.25-.866 2.92-.866 4.976s.363 3.727.866 4.977c.251.625.56 1.151.976 1.56.416.407.98.696 1.587.696 3.118 0 5.402-1.5 6.838-3.098.718-.8 1.237-1.624 1.586-2.333.35-.709.56-1.175.56-1.802 0-.585-.184-1.069-.513-1.78a9.9 9.9 0 0 0-1.53-2.345c-1.41-1.608-3.708-3.106-6.941-3.106m-.022 1.854h.022c2.674 0 4.404 1.17 5.547 2.474a8 8 0 0 1 1.24 1.9c.208.45.302.889.332.992-.031.082-.132.537-.357.993a8.7 8.7 0 0 1-1.304 1.912c-1.18 1.314-2.924 2.485-5.458 2.485-.059 0-.128-.009-.288-.167-.161-.158-.37-.468-.555-.927-.369-.917-.546-2.398-.546-4.285s.177-3.367.546-4.285c.185-.458.394-.769.555-.927.14-.138.211-.161.266-.165M2.68 7.208a.924.924 0 0 0-.885.766.925.925 0 0 0 .751 1.074l5.48.965a.926.926 0 1 0 .32-1.825L2.87 7.22a1 1 0 0 0-.189-.012M1.427 11.1a.925.925 0 0 0-.927.927c0 .514.414.928.927.928h6.297a.925.925 0 0 0 .927-.928.925.925 0 0 0-.927-.927zm6.786 2.78a1 1 0 0 0-.186.015l-5.48.965a.925.925 0 0 0-.752 1.074.926.926 0 0 0 1.074.753l5.478-.967a.926.926 0 0 0-.134-1.84m.726 2.901a.9.9 0 0 0-.358.087l-4.202 1.96a.926.926 0 0 0-.447 1.233.924.924 0 0 0 1.231.447l4.202-1.96a.927.927 0 0 0-.426-1.768'/%3E%3C/svg%3E");
+      }
+    }
+
+    /* Dotted leader line between the label and the price */
+    .filler {
+      @apply mb-3 min-w-4 flex-1 self-end border-b-2 border-dotted border-white/30;
+    }
+
+    .price {
+      @apply font-bold text-brand;
+    }
+  }
+
+  /**
+   * Alert box
+   */
+  .alert {
+    @apply flex items-start gap-3 rounded-xl border border-white/15 bg-white/5 p-4 text-sm;
+
+    .icon {
+      @apply mt-0.5 block size-6 shrink-0 bg-contain bg-center bg-no-repeat;
+    }
+
+    .text {
+      @apply text-ink/80;
+
+      strong {
+        @apply font-bold text-ink;
+      }
+    }
+
+    &.alert--info .icon {
+      /* Material "info" symbol, filled with the brand color */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232dc8dc' d='M11 17h2v-6h-2Zm1.713-8.287Q13 8.425 13 8t-.287-.713Q12.425 7 12 7t-.713.287T11 8t.287.713Q11.576 9 12 9t.713-.287M12 22q-2.075 0-3.9-.788-1.825-.787-3.175-2.137T2.788 15.9 2 12t.788-3.9 2.137-3.175T8.1 2.788Q9.925 2 12 2t3.9.788 3.175 2.137T21.212 8.1 22 12t-.787 3.9-2.138 3.175-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4 6.325 6.325 4 12t2.325 5.675T12 20m0-8'/%3E%3C/svg%3E");
     }
   }
 

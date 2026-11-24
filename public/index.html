@@ -17,78 +17,118 @@
   <main class="site">
     <header class="main">
       <h1 class="logo">
-        <img src="assets/img/logo-expertMobile.svg" alt="Expert Mobile">
+        <a class="svg-logo" href="https://expert-lavage-mobile.ca/" title="expert-lavage-mobile.ca"><img src="assets/img/logo-expertMobile.svg" alt="Expert Mobile"></a>
         <span class="tagline">Lavage d’auto à domicile</span>
       </h1>
       <nav class="btn-group">
-        <span class="btn btn-toggle btn-toggle--left">Français</span>
-        <a href="en/" class="btn btn-toggle btn-toggle--right">English</a>
+        <span class="btn btn-toggle btn-toggle--left" title="Français">Fr</span>
+        <a href="en/" class="btn btn-toggle btn-toggle--right" title="English">English</a>
       </nav>
     </header>
-    <article class="card card-package" id="bronze">
-      <header class="card__header">
-        <div class="left">
-          <h2 class="header__main">Bronze</h2>
-          <p class="header__subtitle">Extérieur seulement</p>
-        </div>
-        <div class="right">
-          <h3 class="header__main">79$ — 119$</h3>
-          <p class="header__subtitle">1,5 à 2 heures</p>
-        </div>
-      </header>
-      <div class="card__content">
-        <ul class="check-list">
-          <li>Nettoyage des vitres</li>
-          <li>Lavage à la main</li>
-          <li>Nettoyage en profondeur des jantes</li>
-          <li>Spray sellant céramique (protection hydrophobe et brillance)</li>
-        </ul>
-      </div>
-    </article>
-    <article class="card card-package" id="argent">
-      <header class="card__header">
-        <div class="left">
-          <h2 class="header__main">Argent</h2>
-          <p class="header__subtitle">Intérieur et extérieur</p>
-        </div>
-        <div class="right">
-          <h3 class="header__main">129$ — 179$</h3>
-          <p class="header__subtitle">3 à 4,5 heures</p>
-        </div>
-      </header>
-      <div class="card__content">
-        <ul class="check-list">
-          <li>Tout du package Bronze</li>
-          <li>Bancs, portières, volant et plus</li>
-          <li>Nettoyage des tapis</li>
-          <li>Aspirateur complet</li>
-          <li>Finition propre</li>
-          <li>Nettoyage des portières</li>
-        </ul>
-      </div>
-    </article>
-    <article class="card card-package" id="gold">
-      <header class="card__header">
-        <div class="left">
-          <h2 class="header__main">Gold</h2>
-          <p class="header__subtitle">Nettoyage en profondeur</p>
-        </div>
-        <div class="right">
-          <h3 class="header__main">199$ — 279$</h3>
-          <p class="header__subtitle">4 à 6 heures</p>
-        </div>
-      </header>
-      <div class="card__content">
-        <ul class="check-list">
-          <li>Tout du package Argent</li>
-          <li>Shampoing des sièges et tapis</li>
-          <li>Traitement des taches de sel</li>
-          <li>Protection des plastiques</li>
-          <li>Conditionneur pour cuir (si applicable)</li>
-          <li>Nettoyage en profondeur des craques</li>
-        </ul>
-      </div>
-    </article>
+    <div class="page-layout">
+      <aside>
+        <nav id="contact">
+          <h2 class="text-2xl mb-2 md:mb-4">Pour nous joindre</h2>
+          <ul class="list-btn-item">
+            <li class="telephone"><a class="btn btn-icon-text icon-mobile-hand" href="tel:+14388877047">(438) 887-7047</a></li>
+            <li class="facebook"><a class="btn btn-icon-text icon-brand-facebook" href="https://www.facebook.com/profile.php?id=61577666890667" target="facebook">Message via Facebook</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        <h2 class="text-2xl mb-2 md:mb-4">Nos forfaits</h2>
+        <section class="card card-package" id="bronze">
+          <header class="card__header">
+            <div class="left">
+              <h2 class="header__main">Bronze</h2>
+              <p class="header__subtitle">Extérieur seulement</p>
+            </div>
+            <div class="right">
+              <h3 class="header__main">79$ — 119$</h3>
+              <p class="header__subtitle">1,5 à 2 heures</p>
+            </div>
+          </header>
+          <div class="card__content">
+            <ul class="list-check-item">
+              <li>Nettoyage des vitres</li>
+              <li>Lavage à la main</li>
+              <li>Nettoyage en profondeur des jantes</li>
+              <li>Spray sellant céramique (protection hydrophobe et brillance)</li>
+            </ul>
+          </div>
+        </section>
+        <section class="card card-package" id="argent">
+          <header class="card__header">
+            <div class="left">
+              <h2 class="header__main">Argent</h2>
+              <p class="header__subtitle">Intérieur et extérieur</p>
+            </div>
+            <div class="right">
+              <h3 class="header__main">129$ — 179$</h3>
+              <p class="header__subtitle">3 à 4,5 heures</p>
+            </div>
+          </header>
+          <div class="card__content">
+            <ul class="list-check-item">
+              <li>Tout du package Bronze</li>
+              <li>Bancs, portières, volant et plus</li>
+              <li>Nettoyage des tapis</li>
+              <li>Aspirateur complet</li>
+              <li>Finition propre</li>
+              <li>Nettoyage des portières</li>
+            </ul>
+          </div>
+        </section>
+        <section class="card card-package" id="gold">
+          <header class="card__header">
+            <div class="left">
+              <h2 class="header__main">Gold</h2>
+              <p class="header__subtitle">Nettoyage en profondeur</p>
+            </div>
+            <div class="right">
+              <h3 class="header__main">199$ — 279$</h3>
+              <p class="header__subtitle">4 à 6 heures</p>
+            </div>
+          </header>
+          <div class="card__content">
+            <ul class="list-check-item">
+              <li>Tout du package Argent</li>
+              <li>Shampoing des sièges et tapis</li>
+              <li>Traitement des taches de sel</li>
+              <li>Protection des plastiques</li>
+              <li>Conditionneur pour cuir (si applicable)</li>
+              <li>Nettoyage en profondeur des craques</li>
+            </ul>
+          </div>
+        </section>
+        <section class="card card-package mt-9" id="extras">
+          <header class="card__header mb-2">
+            <div class="left">
+              <h2 class="header__main text-brand">Extras</h2>
+            </div>
+          </header>
+          <div class="card__content">
+            <ul class="list-icon-item">
+              <li class="icon-item icon-snow">
+                Tâches de calcium <span class="filler"></span> <span class="price">20$</span>
+              </li>
+              <li class="icon-item icon-pets">
+                Retrait des poils d’animaux <span class="filler"></span> <span class="price">20$</span>
+              </li>
+              <li class="icon-item icon-car-lights">
+                Restauration des phares <span class="filler"></span> <span class="price">60$</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <footer class="main">
+          <div class="alert alert--info">
+            <svg class="icon"></svg>
+            <p class="text">Les prix peuvent varier selon la taille du véhicule et son niveau de saleté. Des frais supplémentaires peuvent s’appliquer au moment de l’inspection précédant le lavage. Le cas échéant, la révision du prix vous sera confirmée sur place par un envoi électronique (courriel ou message texte) <strong>AVANT</strong> d’entreprendre le nettoyage.</p>
+          </div>
+        </footer>
+      </article>
+    </div><!-- /.page-layout -->
   </main>
 </body>
 </html>

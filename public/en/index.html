@@ -17,78 +17,118 @@
   <main class="site">
     <header class="main">
       <h1 class="logo">
-        <img src="../assets/img/logo-expertMobile.svg" alt="Expert Mobile">
+        <a class="svg-logo" href="https://expert-lavage-mobile.ca/en" title="expert-lavage-mobile.ca/en"><img src="../assets/img/logo-expertMobile.svg" alt="Expert Mobile"></a>
         <span class="tagline">At-home car wash</span>
       </h1>
       <nav class="btn-group">
-        <a href="../" class="btn btn-toggle btn-toggle--left">Français</a>
-        <span class="btn btn-toggle btn-toggle--right">English</span>
+        <a href="../" class="btn btn-toggle btn-toggle--left" title="Français">Français</a>
+        <span class="btn btn-toggle btn-toggle--right" title="English">En</span>
       </nav>
     </header>
-    <article class="card card-package" id="bronze">
-      <header class="card__header">
-        <div class="left">
-          <h2 class="header__main">Bronze</h2>
-          <p class="header__subtitle">Exterior only</p>
-        </div>
-        <div class="right">
-          <h3 class="header__main">$79 — $119</h3>
-          <p class="header__subtitle">1.5 to 2 hours</p>
-        </div>
-      </header>
-      <div class="card__content">
-        <ul class="check-list">
-          <li>Window cleaning</li>
-          <li>Hand wash</li>
-          <li>Deep cleaning of the wheels</li>
-          <li>Ceramic sealant spray (hydrophobic protection and shine)</li>
-        </ul>
-      </div>
-    </article>
-    <article class="card card-package" id="silver">
-      <header class="card__header">
-        <div class="left">
-          <h2 class="header__main">Silver</h2>
-          <p class="header__subtitle">Interior and exterior</p>
-        </div>
-        <div class="right">
-          <h3 class="header__main">$129 — $179</h3>
-          <p class="header__subtitle">3 to 4.5 hours</p>
-        </div>
-      </header>
-      <div class="card__content">
-        <ul class="check-list">
-          <li>Everything in the Bronze package</li>
-          <li>Seats, doors, steering wheel and more</li>
-          <li>Floor mat cleaning</li>
-          <li>Full vacuum</li>
-          <li>Clean finish</li>
-          <li>Door cleaning</li>
-        </ul>
-      </div>
-    </article>
-    <article class="card card-package" id="gold">
-      <header class="card__header">
-        <div class="left">
-          <h2 class="header__main">Gold</h2>
-          <p class="header__subtitle">Deep cleaning</p>
-        </div>
-        <div class="right">
-          <h3 class="header__main">$199 — $279</h3>
-          <p class="header__subtitle">4 to 6 hours</p>
-        </div>
-      </header>
-      <div class="card__content">
-        <ul class="check-list">
-          <li>Everything in the Silver package</li>
-          <li>Seat and carpet shampoo</li>
-          <li>Salt stain treatment</li>
-          <li>Plastic protection</li>
-          <li>Leather conditioner (if applicable)</li>
-          <li>Deep cleaning of crevices</li>
-        </ul>
-      </div>
-    </article>
+    <div class="page-layout">
+      <aside>
+        <nav id="contact">
+          <h2 class="text-2xl mb-2 md:mb-4">Get in touch</h2>
+          <ul class="list-btn-item">
+            <li class="telephone"><a class="btn btn-icon-text icon-mobile-hand" href="tel:+14388877047">(438) 887-7047</a></li>
+            <li class="facebook"><a class="btn btn-icon-text icon-brand-facebook" href="https://www.facebook.com/profile.php?id=61577666890667" target="facebook">Message us on Facebook</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <article>
+        <h2 class="text-2xl mb-2 md:mb-4">Our packages</h2>
+        <section class="card card-package" id="bronze">
+          <header class="card__header">
+            <div class="left">
+              <h2 class="header__main">Bronze</h2>
+              <p class="header__subtitle">Exterior only</p>
+            </div>
+            <div class="right">
+              <h3 class="header__main">$79 — $119</h3>
+              <p class="header__subtitle">1.5 to 2 hours</p>
+            </div>
+          </header>
+          <div class="card__content">
+            <ul class="list-check-item">
+              <li>Window cleaning</li>
+              <li>Hand wash</li>
+              <li>Deep cleaning of the wheels</li>
+              <li>Ceramic sealant spray (hydrophobic protection and shine)</li>
+            </ul>
+          </div>
+        </section>
+        <section class="card card-package" id="silver">
+          <header class="card__header">
+            <div class="left">
+              <h2 class="header__main">Silver</h2>
+              <p class="header__subtitle">Interior and exterior</p>
+            </div>
+            <div class="right">
+              <h3 class="header__main">$129 — $179</h3>
+              <p class="header__subtitle">3 to 4.5 hours</p>
+            </div>
+          </header>
+          <div class="card__content">
+            <ul class="list-check-item">
+              <li>Everything in the Bronze package</li>
+              <li>Seats, doors, steering wheel and more</li>
+              <li>Floor mat cleaning</li>
+              <li>Full vacuum</li>
+              <li>Clean finish</li>
+              <li>Door cleaning</li>
+            </ul>
+          </div>
+        </section>
+        <section class="card card-package" id="gold">
+          <header class="card__header">
+            <div class="left">
+              <h2 class="header__main">Gold</h2>
+              <p class="header__subtitle">Deep cleaning</p>
+            </div>
+            <div class="right">
+              <h3 class="header__main">$199 — $279</h3>
+              <p class="header__subtitle">4 to 6 hours</p>
+            </div>
+          </header>
+          <div class="card__content">
+            <ul class="list-check-item">
+              <li>Everything in the Silver package</li>
+              <li>Seat and carpet shampoo</li>
+              <li>Salt stain treatment</li>
+              <li>Plastic protection</li>
+              <li>Leather conditioner (if applicable)</li>
+              <li>Deep cleaning of crevices</li>
+            </ul>
+          </div>
+        </section>
+        <section class="card card-package mt-9" id="extras">
+          <header class="card__header mb-2">
+            <div class="left">
+              <h2 class="header__main text-brand">Extras</h2>
+            </div>
+          </header>
+          <div class="card__content">
+            <ul class="list-icon-item">
+              <li class="icon-item icon-snow">
+                Calcium stains <span class="filler"></span> <span class="price">$20</span>
+              </li>
+              <li class="icon-item icon-pets">
+                Pet hair removal <span class="filler"></span> <span class="price">$20</span>
+              </li>
+              <li class="icon-item icon-car-lights">
+                Headlight restoration <span class="filler"></span> <span class="price">$60</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <footer class="main">
+          <div class="alert alert--info">
+            <svg class="icon"></svg>
+            <p class="text">Prices may vary depending on the vehicle’s size and how dirty it is. Additional fees may apply at the time of the inspection before the wash. If so, the revised price will be confirmed to you on site by electronic message (email or text message) <strong>BEFORE</strong> any cleaning begins.</p>
+          </div>
+        </footer>
+      </article>
+    </div><!-- /.page-layout -->
   </main>
 </body>
 </html>

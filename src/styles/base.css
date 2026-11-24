@@ -1,5 +1,10 @@
 /* Base element styles (Tailwind's Preflight already provides the reset). */
 @layer base {
+  /* contenu dissimulé */
+  #contact .telephone {
+    display:none !important;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -16,9 +21,23 @@
    * Page layout
    */
   main.site {
-    @apply max-w-(--breakpoint-md) mx-auto my-2 md:my-6 px-6 md:px-0 pb-6;
+    @apply max-w-(--breakpoint-lg) mx-auto my-2 md:my-6 px-6 md:px-0 pb-6;
   }
+  .page-layout {
+    /* Single column on mobile (aside first, as in the DOM); from md up, side by side with the aside on the right */
+    @apply flex flex-col gap-8 md:flex-row-reverse md:items-start;
 
+    > article {
+      @apply min-w-0 md:flex-1;
+    }
+
+    > aside {
+      @apply md:w-72 md:shrink-0;
+    }
+  }
+  footer.main {
+    @apply mt-6 pt-6;
+  }
   header.main {
     @apply flex flex-col sm:flex-row items-center px-2 pb-8;
 

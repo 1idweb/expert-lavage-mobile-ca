@@ -1,3 +1,16 @@
+/* Animated angle used by the glowing card border (must live outside @layer). */
+@property --glow-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes glow-spin {
+  to {
+    --glow-angle: 360deg;
+  }
+}
+
 /* Reusable component classes (keep this small; prefer utilities in the HTML). */
 @layer components {
 
@@ -30,6 +43,78 @@
       /* Round the left corners only */
       &.btn-toggle--left {
         @apply rounded-l-lg pl-4;
+      }
+    }
+  }
+
+  /**
+   * Package cards (Bronze / Silver / Gold)
+   */
+  .card {
+    /* Frosted glass: translucent fill + blur of whatever is behind the card */
+    @apply relative isolate rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-xl;
+    /* Soft brand-colored halo around the card */
+    @apply shadow-[0_0_40px_-12px_var(--color-brand)];
+
+    /* Animated glowing border: a rotating conic gradient shown only on the 1px ring */
+    &::before {
+      content: '';
+      @apply pointer-events-none absolute inset-0 rounded-[inherit] p-px;
+      background: conic-gradient(
+        from var(--glow-angle),
+        transparent 0 55%,
+        var(--color-brand) 80%,
+        var(--color-brand-light) 90%,
+        transparent 100%
+      );
+      /* Keep only the border ring (subtract the content box from the full box) */
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      animation: glow-spin 6s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      &::before {
+        animation: none;
+      }
+    }
+  }
+
+  .card-package {
+    @apply mb-6;
+  }
+
+  .card__header {
+    @apply mb-4 md:mb-6 flex items-start justify-between gap-4;
+
+    .header__main {
+      @apply text-xl font-extrabold uppercase tracking-wide sm:text-2xl;
+    }
+
+    .header__subtitle {
+      @apply text-sm text-ink/80;
+    }
+
+    .right {
+      @apply whitespace-nowrap text-right;
+    }
+  }
+
+  /**
+   * Feature list with a check icon (SVG inlined as a data URI)
+   */
+  .check-list {
+    /* One column on mobile, two columns from sm up */
+    @apply columns-1 gap-x-6 sm:columns-2;
+
+    li {
+      @apply relative mb-3 break-inside-avoid pl-8;
+
+      &::before {
+        content: '';
+        @apply absolute left-0 top-0 size-6 bg-contain bg-center bg-no-repeat;
+        /* Material "check" symbol: viewBox added and fill set to white (currentcolor does not work in background-image) */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232dc8dc' d='m9.55 18-5.7-5.7 1.43-1.42 4.28 4.28 9.18-9.18 1.41 1.42z'/%3E%3C/svg%3E");
       }
     }
   }
